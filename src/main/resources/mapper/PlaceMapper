@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dao.PlaceDao">
+    <!--  更新场地信息  -->
+    <update id="updatePlace" parameterType="Place">
+        update place_msg
+        <set>
+            <if test="place_name != null and place_name != null">
+                place_name = #{place_name}
+            </if>
+            <if test="place_info != null and place_info != ''">
+                place_info = #{place_info}
+            </if>
+            <if test="pro_no != null and pro_no != ''">
+                pro_no = #{pro_no}
+            </if>
+        </set>
+        where place_no = #{place_no}
+    </update>
+
+    <!--  添加场地  -->
+    <insert id="insertPlace" parameterType="Place">
+        insert into place(place_no,place_name,place_info) values(#{place_no},#{place_name},#{place_info})
+    </insert>
+
+    <!--  删除场地  -->
+    <delete id="deletePlace" parameterType="Integer">
+        delete from place where place_no = #{place_no}
+    </delete>
+</mapper>

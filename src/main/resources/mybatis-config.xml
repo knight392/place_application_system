@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <!--  配置别名，别名拓展，指定包名即可，之后程序会为包下的所有类都自动加上别名  -->
+    <typeAliases>
+        <package name="pojo"/>
+    </typeAliases>
+    <!-- 配置Mapper的位置 -->
+    <mappers>
+
+    </mappers>
+</configuration>

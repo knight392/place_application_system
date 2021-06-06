@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dao.AplProcedureDao">
+<!-- 修改流程信息   -->
+    <update id="updateAplProcedureDao" parameterType="AplProcedure">
+        update apl_procedure
+        <set>
+            <if test="pro_name != null and pro_name != ''">
+                pro_name = #{pro_name}
+            </if>
+        </set>
+        where pro_no = #{pro_no}
+    </update>
+<!--  添加流程  -->
+    <insert id="insertAplProcedure" parameterType="AplProcedure">
+        insert into apl_procedure(pro_no,pro_name) values(#{pro_no},#{pro_name})
+    </insert>
+<!--  删除流程  -->
+    <delete id="deleteAplProcedure" parameterType="Integer">
+        delete apl_procedure where pro_no = #{pro_no}
+    </delete>
+</mapper>
