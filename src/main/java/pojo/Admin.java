@@ -1,5 +1,7 @@
 package pojo;
 
+import org.junit.jupiter.params.shadow.com.univocity.parsers.annotations.Validate;
+
 /**
  * 管理员
  */
@@ -32,5 +34,8 @@ public class Admin {
         this.admin_password = admin_password;
     }
 
-
+    @Override
+    public String toString() {
+        return "admin[admin_no" + admin_no + ", admin_name = " + admin_name + ", admin_password=" + admin_password + "]";
+    }
 }

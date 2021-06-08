@@ -5,7 +5,7 @@
 <mapper namespace="dao.AdminDao">
     <!-- 根据传入的 pro_no 查找管理员 -->
     <select id="selectAdminByNo" parameterType="String" resultType="Admin">
-        select * from admin where pro_no = #{admin_no}
+        select * from admin where admin_no = #{admin_no}
     </select>
 
     <!--  更新管理员信息  -->

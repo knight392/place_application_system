@@ -9,6 +9,8 @@ public class AplProcedure {
 
     private Integer pro_no;  // 流程编号
     private String pro_name; // 流程名
+
+    private String pro_form_name; // 申请表名
     private List<Place> places; // 包含场地
     private List<Position> positions; // 包含职位
 
@@ -43,6 +45,14 @@ public class AplProcedure {
 
     public void setPro_name(String pro_name) {
         this.pro_name = pro_name;
+    }
+
+    public String getPro_form_name() {
+        return pro_form_name;
+    }
+
+    public void setPro_form_name(String pro_form_name) {
+        this.pro_form_name = pro_form_name;
     }
 
 }

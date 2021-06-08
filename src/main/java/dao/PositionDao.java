@@ -2,6 +2,8 @@ package dao;
 
 import pojo.Position;
 
+import java.util.List;
+
 /**
  * 职位持久层操作
  */
@@ -20,4 +22,9 @@ public interface PositionDao {
      * 更新职位
      */
     public int updatePosition(Position position);
+
+    /**
+     * 查询所有职位
+     */
+    public List<Position> selectAllPositions();
 }

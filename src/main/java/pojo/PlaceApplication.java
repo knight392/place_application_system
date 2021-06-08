@@ -9,6 +9,8 @@ public class PlaceApplication {
 
     private Integer apl_no; // 申请表编号
     private AplProcedure aplProcedure; // 所属流程
+    private Place place; // 申请的场地
+    private String purpose; // 申请目的
     private Student student; // 申请学生
     private int cur_status; // 当前申请状态 1 - 申请中 2 – 通过 3 – 打回 4 – 失败
     private int cur_step; // 当前在流程中的步骤 起始为1
@@ -17,6 +19,23 @@ public class PlaceApplication {
     private String org_name; // 组织名称，申请一定要以组织名义申请
     private Date begin_time; // 开始时间
     private Date end_time; // 结束时间
+
+
+    public String getPurpose() {
+        return purpose;
+    }
+
+    public void setPurpose(String purpose) {
+        this.purpose = purpose;
+    }
+
+    public Place getPlace() {
+        return place;
+    }
+
+    public void setPlace(Place place) {
+        this.place = place;
+    }
 
     public Integer getApl_no() {
         return apl_no;

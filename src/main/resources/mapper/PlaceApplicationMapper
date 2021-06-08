@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dao.PlaceApplicationDao">
+<!--  添加申请表  -->
+    <insert id="insertPlaceApplication" parameterType="PlaceApplication">
+        insert into place_application(apl_no,place_no,pro_no,s_no,cur_status,cur_step,s_phone,tutor_name,org_name,begin_time,end_time, purpose)
+        values(#{apl_no},#{place.place_no},#{aplProcedure.pro_no},#{student.s_no},#{cur_status},#{cur_step},#{s_phone},#{tutor_name},#{org_name},#{begin_time},#{end_time}, #{purpose})
+    </insert>
+
+<!--  查询申请表  -->
+    <select id="selectPlaceApplicationByNo" parameterType="Integer" resultMap="placeApplicationWithStudentAndAplProcedure">
+        select place_application.*, student.s_name, apl_procedure.pro_name, place.pro_form_name from place_application, student, apl_procedure, place
+        where place_applicaton.s_no = student.s_no and place_application.pro_no = apl_procedure.pro_no and place_application.place_no = place.place_no
+    </select>
+    <resultMap id="placeApplicationWithStudentAndAplProcedure" type="PlaceApplication">
+        <association property="student" column="s_no" javaType="Student"></association>
+        <association property="aplProcedure" column="pro_no" javaType="AplProcedure"></association>
+        <association property="place" column="place_no" javaType="Place"></association>
+    </resultMap>
+<!--  修改申请表  -->
+    <update id="updatePlaceApplication" parameterType="PlaceApplication">
+        update place_application
+        <set>
+            <if test="cur_status != null">
+                cur_status = #{cur_status},
+            </if>
+            <if test="cur_step != null">
+                cur_step = #{cur_step},
+            </if>
+            <if test="place.place_no != null">
+                place_no = #{place.place_no},
+            </if>
+            <if test="s_phone != null and s_phone != ''">
+                s_phone = #{s_phone}
+            </if>
+            <if test="begin_time != null">
+                begin_tiem = #{begin_time}
+            </if>
+            <if test="end_time != null">
+                end_time = #{end_time}
+            </if>
+            <if test="tutor_name != null and tutor != ''">
+                tutor_name = #{tutor_name}
+            </if>
+            <if test="org_name != null and org_name != ''">
+                org_name = #{org_name}
+            </if>
+            <if test="purpose != null and purpose != ''">
+                purpose = #{purpose}
+            </if>
+        </set>
+        where apl_no = #{apl_no}
+    </update>
+</mapper>
