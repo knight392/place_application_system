@@ -43,4 +43,10 @@ public class Student {
         this.s_dwmc = s_dwmc;
     }
 
+    @Override
+    public String toString() {
+        return "student=[s_no=" + s_no + ", s_name=" + s_name + ", s_password=" + s_password + ", s_dwmc=" + s_dwmc + "]";
+     }
+
+
 }

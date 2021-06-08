@@ -9,6 +9,12 @@
     </typeAliases>
     <!-- 配置Mapper的位置 -->
     <mappers>
-
+        <mapper resource="mapper/AdminMapper.xml"></mapper>
+        <mapper resource="mapper/AplProcedureMapper"></mapper>
+        <mapper resource="mapper/PlaceApplicationMapper"></mapper>
+        <mapper resource="mapper/PlaceMapper"></mapper>
+        <mapper resource="mapper/PositionMapper"></mapper>
+        <mapper resource="mapper/StudentMapper"></mapper>
+        <mapper resource="mapper/TeacherMapper.xml"></mapper>
     </mappers>
 </configuration>

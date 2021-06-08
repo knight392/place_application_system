@@ -49,6 +49,6 @@
     <context:component-scan base-package="service"></context:component-scan>
     <!-- Mapper 代理开发（基于MapperScannerConfigure） -->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-        <property name="basePackage" value="com.dao"></property>
+        <property name="basePackage" value="dao"></property>
     </bean>
 </beans>

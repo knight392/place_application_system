@@ -5,7 +5,7 @@
 <mapper namespace="dao.PositionDao">
     <!--  更新职位信息  -->
     <update id="updatePosition" parameterType="Position">
-        update position
+        update position_msg
         <set>
             <if test="teacher_no != null and teacher_no != ''">
                 teacher_no = #{teacher_no}
@@ -22,11 +22,11 @@
 
     <!--  添加职位  -->
     <insert id="insertPosition" parameterType="Position">
-        insert into position(position_no,position_name,position_info) values(#{position_no},#{position_name},#{position_info})
+        insert into position_msg(position_name,position_info) values(#{position_name},#{position_info})
     </insert>
 
     <!--  删除职位  -->
     <delete id="deletePosition" parameterType="Integer">
-        delete from position where position_no = #{position_no}
+        delete from position_msg where position_no = #{position_no}
     </delete>
 </mapper>

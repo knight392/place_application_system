@@ -25,10 +25,8 @@
     </update>
 
 <!--  根据账号查询教师信息  -->
-    <select id="selectTeacherByNo" parameterType="String" resultMap="">
-        select teacher.*, position.position_name, position.position_info from
-        teacher, position
-        where teacher.position_no = position.position_no
+    <select id="selectTeacherByNo" parameterType="String" resultMap="TeacherWithPosition">
+        select * from teacher left join position on teacher.teacher_no = position.teacher_no and teacher.teacher_no = #{teacher_no};
     </select>
 
     <resultMap id="TeacherWithPosition" type="Teacher">

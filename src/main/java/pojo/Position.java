@@ -7,25 +7,28 @@ public class Position {
     private Integer position_no; // 职位编号
     private String position_name; // 职位名称
     private String position_info; // 职位描述
-    private Integer pro_no; // 所属流程
+
+    private AplProcedure aplProcedure; // 所属流程
     private int pro_order; // 流程中的次序
-    private String teacher_no; // 教师编号
+    private Teacher teacher; // 教师编号
 
-    public Integer getPro_no() {
-        return pro_no;
+
+    public AplProcedure getAplProcedure() {
+        return aplProcedure;
     }
 
-    public void setPro_no(Integer pro_no) {
-        this.pro_no = pro_no;
+    public void setAplProcedure(AplProcedure aplProcedure) {
+        this.aplProcedure = aplProcedure;
     }
 
-    public String getTeacher_no() {
-        return teacher_no;
+    public Teacher getTeacher() {
+        return teacher;
     }
 
-    public void setTeacher_no(String teacher_no) {
-        this.teacher_no = teacher_no;
+    public void setTeacher(Teacher teacher) {
+        this.teacher = teacher;
     }
+
 
     public Integer getPosition_no() {
         return position_no;
